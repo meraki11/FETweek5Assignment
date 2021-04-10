@@ -1,0 +1,15 @@
+{
+  "name": "fet-week5assignment",
+  "version": "1.0.0",
+  "description": "files for tic tac toe assignment",
+  "main": "week5Assignment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0"
+  }
+}

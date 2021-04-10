@@ -1,0 +1,152 @@
+/* tic tac toe css - referenced from Web Dev Simplified tutorial for graphical X and O instead of text */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    fleX-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color:white;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.square:first-child, .square:nth-child(2), .square:nth-child(3) {
+    border-top: none;
+}
+.square:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.square:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.square:last-child, .square:nth-child(8), .square:nth-child(7) {
+    border-bottom: none;
+}
+
+.square.X, .square.O {
+    cursor: not-allowed;
+}
+
+.square.X::before,
+.square.X::after,
+.square.O::before,
+.square.O::after {
+    background-color: black;
+}
+
+.grid.X .square:not(.X):not(.O):hover::before, 
+.grid.X .square:not(.X):not(.O):hover::after,
+.grid.O .square:not(.X):not(.O):hover::before,
+.grid.O .square:not(.X):not(.O):hover::after {
+    background-color: lightgrey;
+}
+ 
+.square.X::before,
+.square.X::after,
+.grid.X .square:not(.X):not(.O):hover::before,
+.grid.X .square:not(.X):not(.O):hover::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 85px;
+}
+
+.square.X::before,
+.grid.X .square:not(.X):not(.O):hover::before {
+    transform: rotate(45deg);
+}
+
+.square.X::after,
+.grid.X .square:not(.X):not(.O):hover::after {
+    transform: rotate(-45deg);
+}
+
+.square.O::before,
+.square.O::after,
+.grid.O .square:not(.X):not(.O):hover::before,
+.grid.O .square:not(.X):not(.O):hover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.square.O::before,
+.grid.O .square:not(.X):not(.O):hover::before {
+    width:75px;
+    height:75px;
+    
+}
+
+.square.O::after,
+.grid.O .square:not(.X):not(.O):hover::after {
+    width: 55px;
+    height: 55px;
+    background-color: white;
+}
+
+h1 {
+    background-color: lightgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique ;
+    border: 5px dotted green;
+    padding: 10px;
+}
+
+h2 {
+    background-color: lightgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid green;
+    padding: 10px;
+}
+
+button {
+    background-color:white;
+    color:green;
+    border:black 2px solid;
+    border-radius: 8px;
+    padding: 20px;
+    teXt-align: center;
+    justify-content: center;
+    font-size: 20px;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    background-color:green;
+    color:white;
+}
+
